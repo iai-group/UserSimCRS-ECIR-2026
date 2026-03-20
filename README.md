@@ -78,8 +78,6 @@ python -m scripts.evaluation.quality_evaluation \
     --output <path_to_save_results>
 ```
 
-*Note*: The commands assume that you have already set up the environment and installed all necessary dependencies as described in the main README file.
-
 ### Results
 
 The generated synthetic dialogues for ECIR 2026 submission are saved in the `data/movie_recommendation_case_study/synthetic_dialogues` folder, and the conversation quality aspects' scores are saved in the `data/movie_recommendation_case_study/results` folder.
