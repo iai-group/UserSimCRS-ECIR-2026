@@ -14,12 +14,6 @@ The easiest way to install UserSimCRS and all of its dependencies is by using pi
 python -m pip install -r requirements/requirements.txt
 ```
 
-To work on the documentation you also need to install other dependencies:
-
-```shell
-python -m pip install -r requirements/docs_requirements.txt
-```
-
 ## Case Study: Movie Recommendation
 
 ### Conversational Recommender Systems
@@ -35,7 +29,7 @@ IAI MovieBot implementation is available [here](https://github.com/iai-group/Mov
   * SP-LLMUS: single prompt LLM-based user simulator
   * DP-LLMUS: dual prompt LLM-based user simulator
 
-Configurations of the user simulators for the different datasets are available in the `data/movie_recommendation_case_study/config` folder of each dataset subfolder.
+Configurations of the user simulators for the different datasets are available in the `data/movie_recommendation_case_study/` folder.
 
 ### Datasets
 
