@@ -36,8 +36,3 @@ slot_labels:
   - SHORT_PLOT
   - YOUTUBE_TRAILER
   - TITLE
-
-ollama_host: "http://localhost:11434"
-ollama_model: "mistral-nemo:12b"
-ollama_options:
-  temperature: 0

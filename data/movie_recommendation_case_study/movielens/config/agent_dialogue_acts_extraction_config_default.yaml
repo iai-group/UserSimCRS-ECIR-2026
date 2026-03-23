@@ -16,8 +16,3 @@ slot_labels:
   - GENRE
   - TITLE
   - KEYWORD
-
-ollama_host: "http://localhost:11434"
-ollama_model: "mistral-nemo:12b"
-ollama_options:
-  temperature: 0

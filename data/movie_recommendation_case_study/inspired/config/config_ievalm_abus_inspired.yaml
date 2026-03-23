@@ -7,7 +7,7 @@ num_simulated_dialogues: 100
 agent_class_path: "crs_agent_wrapper.ievalm_agent.iEvaLMAgent"
 agent_id: "BARCOR_ReDial"
 # By default, the agent has an HTTP API.
-agent_uri: "http://127.0.0.1:5006"
+agent_uri: "http://127.0.0.1:5010"
 agent_config:
   stop_intent:
     class_path: "dialoguekit.core.intent.Intent"
@@ -75,13 +75,22 @@ domain_mapping:
     slot: YOUTUBE_TRAILER
 ratings: 
 
-dialogues: data/datasets/inspired/annotated_sample.json
-intent_classifier: "lm"
-intent_classifier_config: examples/movie_recommendation/inspired/config/agent_dialogue_acts_extraction_config_default.yaml
+nlu:
+  type: "llm"
+  intent_classifier_config: data/movie_recommendation_case_study/inspired/config/agent_dialogue_acts_extraction_config_default.yaml
+  llm_interface_class_path: "usersimcrs.llm_interfaces.ollama_interface.OllamaLLMInterface"
+  llm_interface_args:
+    configuration_path: config/llm_interface/config_ollama_default.yaml
 
-nlg: "lm"
-nlg_class_path: usersimcrs.nlg.lm.nlg_generative_lm.LMGenerativeNLG
-nlg_args:
-  ollama_config_file: config/llm_interface/config_ollama_default.yaml
-  prompt_file: examples/movie_recommendation/inspired/prompts/user_utterance_nlg_prompt_ievalm.txt
-  prompt_prefix: "Generated utterance:"
+
+dialogues: data/datasets/inspired/annotated_sample.json
+
+nlg:
+  type: "llm"
+  class_path: "usersimcrs.nlg.llm.nlg_generative_llm.LLMGenerativeNLG"
+  args:
+    prompt_file: data/movie_recommendation_case_study/inspired/prompts/user_utterance_nlg_prompt_ievalm.txt
+    prompt_prefix: "Generated utterance:"
+  llm_interface_class_path: "usersimcrs.llm_interfaces.ollama_interface.OllamaLLMInterface"
+  llm_interface_args:
+    configuration_path: config/llm_interface/config_ollama_default.yaml

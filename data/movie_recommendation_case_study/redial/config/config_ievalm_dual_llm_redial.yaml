@@ -7,7 +7,7 @@ num_simulated_dialogues: 100
 agent_class_path: "crs_agent_wrapper.ievalm_agent.iEvaLMAgent"
 agent_id: "BARCOR_ReDial"
 # By default, the agent has an HTTP API.
-agent_uri: "http://127.0.0.1:5006"
+agent_uri: "http://127.0.0.1:5010"
 agent_config:
   stop_intent:
     class_path: "dialoguekit.core.intent.Intent"
@@ -15,7 +15,7 @@ agent_config:
       label: "END"
 
 ### SIMULATOR CONFIGURATION ###
-simulator_class_path: "usersimcrs.simulator.llm.dual_prompt_user_simulator.DualPromptUserSimulator"
+simulator_class_path: "usersimcrs.simulator.llm.llm_dual_prompt_user_simulator.LLMDualPromptUserSimulator"
 simulator_id: "Dual_LLM_nemo_ReDial"
 
 domain: data/domains/redial.yaml
@@ -37,6 +37,7 @@ task_definition: "You are a USER discussing with an ASSISTANT. Given the convers
 
 stop_definition: "As a USER interacting with an ASSISTANT to receive a recommendation, analyze the conversation history to determine if it is progressing productively. If the conversation has been stuck in a loop with repeated misunderstandings across multiple turns, return 'FALSE' to indicate the conversation should be terminated. Otherwise, return 'TRUE' to indicate that the conversation should continue. Only return 'TRUE' or 'FALSE' without any additional information. If the length of the conversation exceeds 50 turns, you must terminate the conversation by sending 'FALSE'."
 
-llm_interface_class_path: "usersimcrs.simulator.llm.interfaces.ollama_interface.OllamaLLMInterface"
-llm_interface_args:
-  configuration_path: config/llm_interface/config_ollama_default.yaml
+llm_interface:
+  llm_interface_class_path: "usersimcrs.llm_interfaces.ollama_interface.OllamaLLMInterface"
+  llm_interface_args:
+    configuration_path: config/llm_interface/config_ollama_default.yaml
