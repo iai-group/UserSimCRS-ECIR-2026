@@ -37,6 +37,17 @@ IAI MovieBot implementation is available [here](https://github.com/iai-group/Mov
 
 Configurations of the user simulators for the different datasets are available in the `data/movie_recommendation_case_study/config` folder of each dataset subfolder.
 
+### Datasets
+
+We provide configuration files for three datasets:
+
+  * ReDial
+  * INSPIRED
+  * Movielens
+
+Prior to running the evaluation, you need to make sure that you have downloaded and preprocessed the datasets. Instructions to download and preprocess datasets are available [here](scripts/datasets/README.md).
+
+
 ### Running Evaluation
 
 The evaluation is performed in two steps:

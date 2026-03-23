@@ -138,10 +138,13 @@ def _get_agenda_based_simulator_config(
             domain=domain,
             domain_mapping=config["domain_mapping"].get(),
             id_col=config["id_col"].get(),
+            delimiter=config["csv_delimiter"].get(","),
         )
 
     ratings = Ratings(item_collection)
-    ratings.load_ratings_csv(file_path=config["ratings"].get())
+    if config["ratings"].get() is not None:
+        # Load ratings if CSV file is provided
+        ratings.load_ratings_csv(file_path=config["ratings"].get())
     historical_ratings, _ = ratings.create_split(
         config["historical_ratings_ratio"].get(0.8)
     )
@@ -303,6 +306,7 @@ def _get_llm_single_prompt_user_simulator_config(
             domain=domain,
             domain_mapping=config["domain_mapping"].get(),
             id_col=config["id_col"].get(),
+            delimiter=config["csv_delimiter"].get(","),
         )
 
     llm_interface = get_llm_interface(config["llm_interface"].get())
