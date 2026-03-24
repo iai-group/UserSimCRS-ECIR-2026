@@ -14,7 +14,6 @@ agent_config:
     args:
       label: "END"
 
-
 ### SIMULATOR CONFIGURATION ###
 simulator_class_path: "usersimcrs.simulator.llm.llm_single_prompt_user_simulator.LLMSinglePromptUserSimulator"
 simulator_id: "Single_LLM_nemo_ReDial"

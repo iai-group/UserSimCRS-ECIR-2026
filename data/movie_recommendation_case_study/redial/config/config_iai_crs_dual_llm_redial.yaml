@@ -33,7 +33,6 @@ domain_mapping:
 ratings: data/item_collections/redial/ratings.csv
 historical_ratings_ratio: 0.8
 
-
 task_definition: "You are a USER discussing with an ASSISTANT. Given the conversation history, you need to generate the next USER message in the most natural way possible. The conversation is about getting a recommendation according to the REQUIREMENTS. You must fulfill all REQUIREMENTS as the conversation progresses (you don't need to fulfill them all at once). After getting all the necessary information, you can terminate the conversation by sending 'exit'. You may also terminate the conversation is stuck in a loop or the ASSISTANT is not helpful by sending 'quit'. If the length of the conversation exceeds 50 turns, you must terminate the conversation by sending 'quit'. "
 
 stop_definition: "As a USER interacting with an ASSISTANT to receive a recommendation, analyze the conversation history to determine if it is progressing productively. If the conversation has been stuck in a loop with repeated misunderstandings across multiple turns, return 'FALSE' to indicate the conversation should be terminated. Otherwise, return 'TRUE' to indicate that the conversation should continue. Only return 'TRUE' or 'FALSE' without any additional information."

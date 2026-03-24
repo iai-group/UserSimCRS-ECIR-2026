@@ -7,13 +7,13 @@ num_simulated_dialogues: 100
 agent_class_path: "sample_agents.moviebot_agent.MovieBotAgent"
 agent_id: "IAI MovieBot"
 # By default, the agent has an HTTP API.
-agent_uri: "http://127.0.0.1:5001"
+agent_uri: "http://127.0.0.1:5002"
 agent_config:
   stop_intent:
     class_path: "dialoguekit.core.intent.Intent"
     args:
       label: "goodbye"
-    
+
 ### SIMULATOR CONFIGURATION ###
 simulator_class_path: "usersimcrs.simulator.llm.llm_dual_prompt_user_simulator.LLMDualPromptUserSimulator"
 simulator_id: "Dual_LLM_nemo_INSPIRED"
@@ -73,8 +73,8 @@ domain_mapping:
     slot: SHORT_PLOT
   youtube_link:
     slot: YOUTUBE_TRAILER
-ratings: 
-historical_ratings_ratio: 
+ratings:
+historical_ratings_ratio:
 
 task_definition: "You are a USER discussing with an ASSISTANT. Given the conversation history, you need to generate the next USER message in the most natural way possible. The conversation is about getting a recommendation according to the REQUIREMENTS. You must fulfill all REQUIREMENTS as the conversation progresses (you don't need to fulfill them all at once). After getting all the necessary information, you can terminate the conversation by sending 'exit'. You may also terminate the conversation is stuck in a loop or the ASSISTANT is not helpful by sending 'quit'. "
 

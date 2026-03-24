@@ -13,7 +13,7 @@ agent_config:
     class_path: "dialoguekit.core.intent.Intent"
     args:
       label: "goodbye"
-    
+
 ### SIMULATOR CONFIGURATION ###
 simulator_class_path: "usersimcrs.simulator.llm.llm_single_prompt_user_simulator.LLMSinglePromptUserSimulator"
 simulator_id: "Single_LLM_nemo_INSPIRED"
@@ -73,8 +73,8 @@ domain_mapping:
     slot: SHORT_PLOT
   youtube_link:
     slot: YOUTUBE_TRAILER
-ratings: 
-historical_ratings_ratio: 
+ratings:
+historical_ratings_ratio:
 
 task_definition: "You are a USER discussing with an ASSISTANT. Given the conversation history, you need to generate the next USER message in the most natural way possible. The conversation is about getting a recommendation according to the REQUIREMENTS. You must fulfill all REQUIREMENTS as the conversation progresses (you don't need to fulfill them all at once). After getting all the necessary information, you can terminate the conversation by sending 'exit'. You may also terminate the conversation is stuck in a loop or the ASSISTANT is not helpful by sending 'quit'. "
 
