@@ -41,7 +41,6 @@ We provide configuration files for three datasets:
 
 Prior to running the evaluation, you need to make sure that you have downloaded and preprocessed the datasets. Instructions to download and preprocess datasets are available [here](scripts/datasets/README.md).
 
-
 ### Running Evaluation
 
 The evaluation is performed in two steps:
